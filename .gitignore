@@ -20,8 +20,9 @@
 !cfg/yolov3*.cfg
 
 runs/*
+
 *data*
-!dataset.py
+!datasets.py
 
 pycocotools/*
 results*.txt
