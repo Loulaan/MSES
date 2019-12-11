@@ -47,3 +47,8 @@ To run a model with track objects you just need to add `--track`:
 Download from:  
 [Weights](https://yadi.sk/d/OgioXcWDZN7LwA)  
 [Dataset](https://yadi.sk/d/oBHxvhvVEkjoPA)
+
+
+# Literature
+- [YOLOv3](https://arxiv.org/pdf/1804.02767.pdf) 
+- [SORT](https://arxiv.org/pdf/1602.00763.pdf)
