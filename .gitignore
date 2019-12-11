@@ -21,6 +21,7 @@
 
 runs/*
 *data*
+!dataset.py
 
 pycocotools/*
 results*.txt
