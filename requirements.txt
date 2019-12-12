@@ -1,4 +1,5 @@
 # pip install -U -r requirements.txt
+cython
 numpy
 opencv-python
 torch >= 1.3
@@ -9,6 +10,7 @@ Pillow
 numba
 scikit-learn
 scikit-image
+filterpy
 
 # Tensorboard pip requirements -------------------------------------------------
 # tb-nightly
