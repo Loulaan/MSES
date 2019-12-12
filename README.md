@@ -38,7 +38,7 @@ python3 detect.py --source ...
 
 To run a model with track objects you just need to add `--track`:
 
-**YOLOv3:** `python3 detect.py --cfg cfg/yolov3.cfg --weights weights/best --source newData/inference/ --track`  
+**YOLOv3:** `python3 detect.py --cfg cfg/yolov3.cfg --weights weights/best.pt --source newData/inference/ --track`  
 <img src="https://sun9-47.userapi.com/c856028/v856028577/145171/1i6d4UnfrZQ.jpg" width="500">
 
 
@@ -46,7 +46,7 @@ To run a model with track objects you just need to add `--track`:
 
 Download from:  
 [Weights](https://yadi.sk/d/OgioXcWDZN7LwA)  
-[Dataset](https://yadi.sk/d/oBHxvhvVEkjoPA)
+[Dataset](https://yadi.sk/d/jyaTM7cd6-DV0Q)
 
 
 # Literature
