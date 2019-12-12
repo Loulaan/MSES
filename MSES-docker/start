@@ -1,6 +1,5 @@
-docker build -t mses:latest .
+docker build -t morememes/emergancy-tracker:latest .
 docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSES/weights -v $(pwd)/newData:/MSES/newData -it -p 6006:6006 -p 8888:8888 mses:latest
-
 
 
 
@@ -10,3 +9,4 @@ docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSE
 -p localPort:containerPort
 
 docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/data:/MSES/data -it -p 6006:6006 -p 8888:8888 pytorch/pytorch:latest 
+ba
