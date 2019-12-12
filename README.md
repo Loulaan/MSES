@@ -7,6 +7,7 @@ YOLOv3 was taken from [here](https://github.com/ultralytics/yolov3), and was upg
 
 Python 3.7 or later with the following `pip3 install -U -r requirements.txt` packages:
 
+- `cython`
 - `numpy`
 - `torch >= 1.1.0`
 - `opencv-python`
@@ -14,9 +15,38 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 - `numba`
 - `scikit-learn`
 - `scikit-image`
+- `filterpy`
 
 And may be smth else :)
 
+
+# Docker
+
+[DockerHub repository](https://hub.docker.com/r/morememes/emergancy-tracker)
+
+### Image
+
+Downloading docker image from dockerhub: `docker pull morememes/emergancy-tracker:latest`
+
+Building docker image from dockerfile: `docker build -t morememes/emergancy-tracker:latest .`
+
+### Container
+
+Run container: `docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSES/weights -v $(pwd)/newData:/MSES/newData -it -p 6006:6006 -p 8888:8888 morememes/emergancy-tracker:latest`
+
+`--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all` - gpu visibility in the container.
+
+`-v localDir:containerDir` - mapping directories.
+
+`-p localPort:containerPort` - mapping network ports.
+
+Use `bash create_dirs.sh` for fast creating directories.
+
+### Fast install
+
+```bash
+bash create_dirs.sh && docker build -t morememes/emergancy-tracker:latest . && docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSES/weights -v $(pwd)/newData:/MSES/newData -it -p 6006:6006 -p 8888:8888 morememes/emergancy-tracker:latest
+```
 
 # Training
 Any information that you may need to train placed also [here](https://github.com/ultralytics/yolov3) as well as the way to use this software to `transfer-learning`, `resume training` and ect.
