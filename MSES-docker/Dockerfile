@@ -12,5 +12,6 @@ COPY /newData /MSES/newData
 
 EXPOSE 8888
 EXPOSE 6006
+EXPOSE 8080
 
 CMD ["/bin/bash"]
