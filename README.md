@@ -22,11 +22,11 @@ And may be smth else :)
 
 # Docker
 
-[DockerHub repository](https://hub.docker.com/repository/docker/morememes/emergancy-tracker)
+[DockerHub repository](https://hub.docker.com/r/morememes/emergancy-tracker)
 
 ### Image
 
-Downloading docker image from dockerhub: `docker push morememes/emergancy-tracker:tagname`
+Downloading docker image from dockerhub: `docker pull morememes/emergancy-tracker:latest`
 
 Building docker image from dockerfile: `docker build -t morememes/emergancy-tracker:latest .`
 
