@@ -22,17 +22,17 @@ And may be smth else :)
 
 # Docker
 
-[DockerHub repository](https://hub.docker.com/r/morememes/emergancy-tracker)
+[DockerHub repository](https://hub.docker.com/r/morememes/emergency-tracker)
 
 ### Image
 
-Downloading docker image from dockerhub: `docker pull morememes/emergancy-tracker:latest`
+Downloading docker image from dockerhub: `docker pull morememes/emergency-tracker:latest`
 
-Building docker image from dockerfile: `docker build -t morememes/emergancy-tracker:latest .`
+Building docker image from dockerfile: `docker build -t morememes/emergency-tracker:latest .`
 
 ### Container
 
-Run container: `docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSES/weights -v $(pwd)/newData:/MSES/newData -it -p 6006:6006 -p 8888:8888 morememes/emergancy-tracker:latest`
+Run container: `docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSES/weights -v $(pwd)/newData:/MSES/newData -it -p 6006:6006 -p 8888:8888 morememes/emergency-tracker:latest`
 
 `--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all` - gpu visibility in the container.
 
@@ -45,7 +45,7 @@ Use `bash create_dirs.sh` for fast creating directories.
 ### Fast install
 
 ```bash
-bash create_dirs.sh && docker build -t morememes/emergancy-tracker:latest . && docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSES/weights -v $(pwd)/newData:/MSES/newData -it -p 6006:6006 -p 8888:8888 morememes/emergancy-tracker:latest
+bash create_dirs.sh && docker build -t morememes/emergency-tracker:latest . && docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -v $(pwd)/weights:/MSES/weights -v $(pwd)/newData:/MSES/newData -it -p 6006:6006 -p 8888:8888 morememes/emergency-tracker:latest
 ```
 
 # Training
