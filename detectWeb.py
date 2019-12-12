@@ -74,7 +74,7 @@ def inference(source, save_txt=False, save_img=False):
 
         # Process detections
         for det in pred:  # detections per image
-            p, s, im0 = path, '', im0s
+            p, _, im0 = path, '', im0s
 
             # Handle cutoff before throwing another command to traffic control
             if cutoffTrafficControl != 0:
@@ -84,11 +84,9 @@ def inference(source, save_txt=False, save_img=False):
 
 
             save_path = str(Path(out) / Path(p).name)
-            s += '%gx%g ' % img.shape[2:]  # print string
             if det is not None and len(det):
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
-                
                 tracked_objects = mot_tracker.update(det.cpu())
                 for *xyxy, obj_id, cls_pred in tracked_objects:
                     obj_id = int(obj_id)
@@ -110,10 +108,10 @@ def inference(source, save_txt=False, save_img=False):
                             outputDirection = 'Emergency venicle comes to the v2 direction!'
                         cutoffTrafficControl += 1
 
-                        cls = classes[int(cls_pred)]
-                        color = colors[int(obj_id) % len(colors)]
-                        label = '%s - %d' % (cls, int(obj_id))
-                        plot_one_box(xyxy, im0, label=label, color=color)
+                    cls = classes[int(cls_pred)]
+                    color = colors[int(obj_id) % len(colors)]
+                    label = '%s - %d' % (cls, int(obj_id))
+                    plot_one_box(xyxy, im0, label=label, color=color)
                         
         # Save results (image with detections)    
         if vid_path != save_path:  # new video
@@ -130,4 +128,4 @@ def inference(source, save_txt=False, save_img=False):
 
 if __name__ == '__main__':
     with torch.no_grad():
-        print(inference('newData/inference/4.mp4'))
+        print(inference('newData/inference/6.mp4'))
