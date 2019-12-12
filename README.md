@@ -49,7 +49,7 @@ bash create_dirs.sh && docker build -t morememes/emergancy-tracker:latest . && d
 ```
 
 # Training
-Any information that you may need to train placed also [here](https://github.com/ultralytics/yolov3) as well as the way to use this software to `transfer-learning`, `resume training` and ect.
+Any information that you may need to train placed also [here](https://github.com/ultralytics/yolov3) as well as the way to use this software to `transfer-learning`, `resume training` etc.
 
 # Inference
 
