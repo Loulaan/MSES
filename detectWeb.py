@@ -55,6 +55,7 @@ colors = [[random.randint(0, 255) for _ in range(3)] for _ in range(len(classes)
 def inference(source, save_txt=False, save_img=False):
     # Initilize SORT object
     mot_tracker = Sort()
+    
     global vid_path
     global vid_writer
     dataset = LoadImages(source, img_size=img_size, half=half)
@@ -115,7 +116,6 @@ def inference(source, save_txt=False, save_img=False):
         # Save results (image with detections)    
         if vid_path != save_path:  # new video
             vid_path = save_path
-            mot_tracker = Sort()
             if isinstance(vid_writer, cv2.VideoWriter):
                 vid_writer.release()  # release previous video writer
 
