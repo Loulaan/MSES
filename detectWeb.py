@@ -38,7 +38,6 @@ if not os.path.exists(out):
 model = Darknet(cfg, img_size)
 
 # Load weights
-attempt_download(weights)
 model.load_state_dict(torch.load(weights, map_location=device)['model'])
 
 # Eval mode
@@ -51,11 +50,12 @@ vid_path, vid_writer = None, None
 classes = load_classes(parse_data_cfg(data)['names'])
 colors = [[random.randint(0, 255) for _ in range(3)] for _ in range(len(classes))]
 
-# Initilize SORT object
-mot_tracker = Sort()
 
 
 def inference(source, save_txt=False, save_img=False):
+    # Initilize SORT object
+    mot_tracker = Sort()
+    
     global vid_path
     global vid_writer
     dataset = LoadImages(source, img_size=img_size, half=half)
@@ -124,4 +124,9 @@ def inference(source, save_txt=False, save_img=False):
             vid_writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*fourcc), fps, (w, h))
         vid_writer.write(im0)
     vid_writer.release()
+
     return {'direction': outputDirection}
+
+if __name__ == '__main__':
+    with torch.no_grad():
+        print(inference('newData/inference/'))
