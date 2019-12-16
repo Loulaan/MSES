@@ -1,0 +1,39 @@
+
+
+<div class="general-wrapper">
+<!--  <app-traffic-light *ngIf=" direction.direction==='left'" class="upper-traffic"></app-traffic-light>-->
+  <div id="traffic-light-upper">
+    <div class="light red" [ngClass]="{'active': isRedUp}"></div>
+    <div class="light yellow" [ngClass]="{'active': isYellowUp}"></div>
+    <div class="light green" [ngClass]="{'active': isGreenUp}"></div>
+  </div>
+
+  <input class="button input" type="file" (change)="fileChange($event)"  name="file" enctype="multipart/form-data" />
+<div class="video-wrapper">
+
+
+
+
+ <video class="video" *ngIf="video" [src]="video" autoplay="autoplay" controls (click)="videoClick()"  ></video>
+    <!-- <form method="post" enctype="multipart/form-data" action='http://localhost:8080/'>
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+    </form> -->
+</div>
+
+<!--  <form class ="upload-form" (ngSubmit)="fileChange($event)" #form="ngForm" >&ndash;&gt;-->
+    <!--    <input type="file" id="video" [(ngModel)]="video" [ngModelOptions]="{standalone: true}">-->
+    <!--    <button class="button" type="submit">Send video</button>-->
+    <!--    </form>-->
+
+
+
+  <div id="traffic-light-down">
+    <div class="light red" [ngClass]="{'active': isRedDown}"></div>
+    <div class="light yellow" [ngClass]="{'active': isYellowDown}"></div>
+    <div class="light green" [ngClass]="{'active': isGreenDown}"></div>
+  </div>
+<!--  <app-traffic-light  *ngIf=" direction.direction==='right'" class="bottom-traffic"></app-traffic-light>-->
+</div>
+<!--<div class = "wait-text" [style.display]="loading ? 'inline' : 'none'"><b>Идет обработка видео, пожалуйста, подождите...</b></div>-->
+<mat-spinner class="spinner mat-spinner-color"  [style.display]="loading ? 'inline' : 'none'"></mat-spinner>
