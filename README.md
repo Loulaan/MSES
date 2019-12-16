@@ -78,6 +78,18 @@ Download from:
 [Weights](https://yadi.sk/d/OgioXcWDZN7LwA)  
 [Dataset](https://yadi.sk/d/jyaTM7cd6-DV0Q)
 
+# WEB-service:
+Requrements: npm,angular
+
+To run:
+1) in root: python flask_app.py
+2) in MSES-front: 
+
+          2.1) npm i           
+          2.2) ng serve
+          
+3) go to http://localhost:4200
+
 
 # Literature
 - [YOLOv3](https://arxiv.org/pdf/1804.02767.pdf) 
