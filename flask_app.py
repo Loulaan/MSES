@@ -24,7 +24,7 @@ def upload_file():
         filename = file.filename
         if not os.path.isfile(os.path.join('WEB_DATA/out/', filename)):
 
-            if os.path.isfile(os.path.join(UPLOAD_FOLDER, filename)):
+            if not os.path.isfile(os.path.join(UPLOAD_FOLDER, filename)):
                 print("saving.....")
                 file.save(os.path.join(UPLOAD_FOLDER, filename))
             else: print('already saved')
