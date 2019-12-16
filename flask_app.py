@@ -23,15 +23,21 @@ def upload_file():
         file = request.files['file']
         filename = file.filename
         if not os.path.isfile(os.path.join('WEB_DATA/out/', filename)):
-            file.save(os.path.join(UPLOAD_FOLDER, filename))
+
+            if os.path.isfile(os.path.join(UPLOAD_FOLDER, filename)):
+                print("saving.....")
+                file.save(os.path.join(UPLOAD_FOLDER, filename))
+            else: print('already saved')
+
             with torch.no_grad():
+                print('predicting.....')
                 out = inference(os.path.join(UPLOAD_FOLDER, filename))
+
         return send_file(os.path.join('WEB_DATA/out/', filename), as_attachment=True)
 
 @app.route('/direction',methods=['GET'])
 def get_dir():
     global out
-    print(out)
     return jsonify(out)
 
 
